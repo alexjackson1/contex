@@ -1,0 +1,12 @@
+{
+  "build": { "dockerfile": "Dockerfile" },
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop",
+        "tecosaur.latex-utilities"
+      ]
+    }
+  }
+}
