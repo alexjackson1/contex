@@ -19,6 +19,9 @@ RUN wget -O texcount.zip https://app.uio.no/ifi/texcount/download.php?file=texco
   apt-get remove -y wget unzip && \
   rm -rf /usr/src/texcount
 
-RUN apt-get update && apt-get install -y \
+RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections && \
+  apt-get update && apt-get install -y \
   ttf-mscorefonts-installer \
-  && rm -rf /var/lib/apt/lists/*
+  fontconfig \
+  && rm -rf /var/lib/apt/lists/* && \
+  fc-cache -f -v
