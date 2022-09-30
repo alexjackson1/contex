@@ -8,9 +8,10 @@ RUN apt-get update && apt-get install -y \
   wget \
   && rm -rf /var/lib/apt/lists/*
 
+ARG TEXCOUNT_VERSION="3_2_0_41"
 WORKDIR /usr/src/texcount
 
-RUN wget -O texcount.zip https://app.uio.no/ifi/texcount/download.php?file=texcount_3_2_0_41.zip && \
+RUN wget -O texcount.zip https://app.uio.no/ifi/texcount/download.php?file=texcount_${TEXCOUNT_VERSION}.zip && \
   unzip texcount.zip texcount.pl && \
   rm texcount.zip && \
   mv texcount.pl /usr/bin/texcount && \
