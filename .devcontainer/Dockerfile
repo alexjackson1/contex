@@ -3,8 +3,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
 RUN apt-get update && apt-get install -y \
   chktex \
   latexmk \
-  texlive-latex-extra \
-  texlive-xetex \
+  texlive-full \
   unzip \
   wget \
   && rm -rf /var/lib/apt/lists/*
