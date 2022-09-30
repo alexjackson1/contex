@@ -4,6 +4,7 @@ RUN apt-get update && apt-get install -y \
   chktex \
   latexmk \
   texlive-latex-extra \
+  texlive-xetex \
   unzip \
   wget \
   && rm -rf /var/lib/apt/lists/*
