@@ -18,3 +18,7 @@ RUN wget -O texcount.zip https://app.uio.no/ifi/texcount/download.php?file=texco
   chmod +x /usr/bin/texcount && \
   apt-get remove -y wget unzip && \
   rm -rf /usr/src/texcount
+
+RUN apt-get update && apt-get install -y \
+  ttf-mscorefonts-installer \
+  && rm -rf /var/lib/apt/lists/*
